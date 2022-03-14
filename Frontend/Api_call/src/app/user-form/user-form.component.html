@@ -1,0 +1,84 @@
+
+<div class="container-fluid">
+    <h2>User Registration</h2>
+    <form [formGroup]="registrationForm">
+        <div class="form-group">
+            <label>user_first_name</label>
+            <input [class.is-invalid] = "registration_form['user_first_name']?.invalid && 
+            registration_form['user_first_name']?.touched " formControlName="user_first_name" type="text" class="form-control">
+            <small [class.d-none]="registration_form['user_first_name'].valid || registration_form['user_first_name']?.untouched " class="text-danger">First name is required!</small>
+        </div>
+
+        <div class="form-group">
+            <label>user_last_name</label>
+            <input [class.is-invalid] = "registration_form['user_last_name'].invalid && 
+            registration_form['user_last_name']?.touched " formControlName="user_last_name" type="text" class="form-control">
+            <small [class.d-none]="registration_form['user_last_name']?.valid || registration_form['user_last_name']?.untouched " class="text-danger">Last name is required!</small>
+        </div>
+
+        <div class="form-group">
+            <label>user_oraganization_name</label>
+            <input [class.is-invalid] = "registration_form['user_organization_name']?.invalid && 
+            registration_form['user_organization_name']?.touched " formControlName="user_organization_name" type="text" class="form-control">
+            <small [class.d-none]="registration_form['user_organization_name']?.valid || registration_form['user_organization_name']?.untouched " class="text-danger">Organization name is required!</small>
+        </div>
+
+        <div class="form-group" >
+            <label>user_email</label>
+            <input type="email" class="form-control" formControlName="user_email">
+            <span class="text-danger" *ngIf="registration_form['user_email']?.invalid && registration_form['user_email']?.touched">Email is Invalid</span>
+                
+            
+        </div>
+
+        <div class="form-group">
+            <label>user_created_by</label>
+            <input [class.is-invalid] = "registration_form['user_created_by']?.invalid && 
+            registration_form['user_created_by']?.touched " formControlName="user_created_by" type="text" class="form-control">
+            <small [class.d-none]="registration_form['user_created_by']?.valid || registration_form['user_created_by']?.untouched " class="text-danger">Bankerx name is required!</small>
+        </div>
+        <hr>
+        <div class="form-group">
+            <label>user_status</label>
+            <div>
+                <label>True</label>
+                <input type="radio" id="status" formControlName="user_status" value="1">
+            </div> 
+            <div>   
+                <label>False</label>
+                <input type="radio" id="status" formControlName="user_status" value="0">
+            </div> 
+            <small class="text-danger" *ngIf="registration_form['user_status']?.touched && registration_form['user_status']?.invalid">User status is required</small>
+        </div>
+        <hr>
+        <div class="form-group" >
+            <label>user_confirmation_status</label>
+            <div>
+                <label>True</label>
+                <input type="radio" id="status" formControlName="user_confirmation_status" value="1">
+            </div> 
+            <div>   
+                <label>False</label>
+                <input type="radio" id="status" formControlName="user_confirmation_status" value="0">
+            </div> 
+            <small class="text-danger" *ngIf="registration_form['user_confirmation_status']?.touched && registration_form['user_confirmation_status']?.invalid">User confirmation is required</small>
+        </div>
+        <hr>
+        <div class="form-group" [class.has-error]="registration_form['user_freeze']?.touched && registration_form['user_freeze']?.invalid">
+            <label>user_freeze</label>
+            <br>
+            <div>
+                <label>True</label>
+                <input type="radio"  id="status" formControlName="user_freeze" value="1">
+            </div> 
+            <div>   
+                <label>False</label>
+                <input type="radio"  id="status" formControlName="user_freeze" value="0">
+            </div>
+            <small class="text-danger" *ngIf="registration_form['user_freeze']?.touched && registration_form['user_freeze']?.invalid">User freeze is required</small>    
+        </div>
+        <br>
+        <button  [disabled]="!registrationForm.valid" class="btn btn-primary" (click)="saveData()">Register</button>
+        <div *ngIf="flag">Data successfully submitted</div>
+    </form>
+</div>

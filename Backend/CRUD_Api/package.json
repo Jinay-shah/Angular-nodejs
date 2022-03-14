@@ -1,0 +1,22 @@
+{
+  "name": "crud_api",
+  "version": "1.0.0",
+  "description": "Node MySQL crud API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index .js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "joi": "^13.1.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
+  }
+}

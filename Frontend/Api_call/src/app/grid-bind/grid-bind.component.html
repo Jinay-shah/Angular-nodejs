@@ -1,0 +1,86 @@
+<!--<h1><button (click)="saveData()">Data</button></h1>-->
+<h2>Get Request (http://localhost:5000/getAllUsers)</h2>
+
+<table>
+  <tr>
+    <th>user_id</th>
+    <th>user_first_name</th>
+    <th>user_last_name</th>
+    <th>user_organization_name</th>
+    <th>user_email</th>
+    <th>user_created_by</th>
+    <th>user_status</th>
+    <th>user_confirmation_status</th>
+    <th>user_freeze</th>
+    <th>Edit/Delete</th>
+  </tr>
+
+  
+    <tr *ngFor="let com of listcomments">
+      <td>{{com.user_id}}</td>
+      <td>{{com.user_first_name}}</td>
+      <td>{{com.user_last_name}}</td>
+      <td>{{com.user_organization_name}}</td>
+      <td>{{com.user_email}}</td>
+      <td>{{com.user_created_by}}</td>
+      <td>{{com.user_status}}</td>
+      <td>{{com.user_confirmation_status}}</td>
+      <td>{{com.user_freeze}}</td>
+      <td>
+        <button (click)="editData(com.user_id)" id="edit">Edit</button>
+        <button (click)="deleteData(com.user_id)" id="delete">Delete</button>
+      </td>
+    </tr>
+  
+</table>
+<h2>Single data</h2>
+<table>
+  <tr>
+    <th>user_id</th>
+    <th>user_first_name</th>
+    <th>user_last_name</th>
+    <th>user_organization_name</th>
+    <th>user_email</th>
+    <th>user_created_by</th>
+    <th>user_status</th>
+    <th>user_confirmation_status</th>
+    <th>user_freeze</th>
+    <th>Edit/Delete</th>
+  </tr>
+
+  
+  <tr *ngFor="let com of single">
+    <td>{{com.user_id}}</td>
+    <td>{{com.user_first_name}}</td>
+    <td>{{com.user_last_name}}</td>
+    <td>{{com.user_organization_name}}</td>
+    <td>{{com.user_email}}</td>
+    <td>{{com.user_created_by}}</td>
+    <td>{{com.user_status}}</td>
+    <td>{{com.user_confirmation_status}}</td>
+    <td>{{com.user_freeze}}</td>
+    <td>
+      <button>Edit</button>
+      <button>Delete</button>
+    </td>
+    
+  </tr>
+  
+</table>
+
+<h2>Post Data Returned</h2>
+
+<p>user_id: {{objPosts?.user_id}}</p>
+<p>user_first_name: {{objPosts?.user_first_name}}</p>
+<p>user_last_name: {{objPosts?.user_last_name}}</p>
+<p>user_organization_name: {{objPosts?.user_organization_name}}</p>
+<p>user_email: {{objPosts?.user_email}}</p>
+<p>user_created_by: {{objPosts?.user_created_by}}</p>
+<p>user_status: {{objPosts?.user_status}</p>
+<p>user_confirmation_status: {{objPosts?.user_confirmation_status}}</p>
+<p>user_freeze: {{objPosts?.user_freeze}}</p>
+
+
+<h3>Delete Data</h3>
+
+<p>message: {{message}}</p>

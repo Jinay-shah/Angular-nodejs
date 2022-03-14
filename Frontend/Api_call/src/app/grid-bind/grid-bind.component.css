@@ -1,0 +1,21 @@
+
+table, th, td {
+    border: 1px solid black;
+    
+  }
+
+  button{
+    margin:  1mm;
+    color: blueviolet;
+}
+#edit{
+  color: black;
+  background-color: green;
+}
+
+#delete{
+  color: black;
+  background-color: red;
+}
+#edit:hover {background-color: #04ee2b}
+#delete:hover {background-color: #701d09}
